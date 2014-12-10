@@ -1,0 +1,7 @@
+Dim oAppClass As New clsApp
+Public Sub AutoOpen()
+    Set oAppClass.oApp = Word.Application
+    Call oAppClass.oApp_WindowSelectionChange(Selection)
+    End
+End Sub
+
