@@ -1,0 +1,18 @@
+Option Explicit
+Public WithEvents oApp As Word.Application
+
+Private Sub Class_Initialize()
+
+End Sub
+
+Private Sub Class_Terminate()
+
+End Sub
+
+Public Sub oApp_WindowSelectionChange(ByVal Sel As Selection)
+    MsgBox "The selection is on page " & Sel.Information(wdActiveEndPageNumber) & vbCr _
+        & "It is " & Round(Sel.Information(wdVerticalPositionRelativeToPage) / 72, 2) & " inches from the top." & vbCr _
+        & "It is " & Round(Sel.Information(wdHorizontalPositionRelativeToPage) / 72, 2) & " inches from the left."
+End Sub
+
+
